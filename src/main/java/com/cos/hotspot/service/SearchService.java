@@ -38,15 +38,15 @@ public class SearchService {
 	        
 	        org.json.simple.JSONObject obj = Utils.jsonParser(response);
 	        
-	        System.out.println(obj);
 	        JSONArray items = (JSONArray) obj.get("items");
-	        System.out.println("items:" +items.get(0));
+	        
+	        JSONObject jsonObj = (JSONObject) items.get(0);
 	        System.out.println("items:" +items.getClass());
-	        //System.out.println("items:" +items.get("link"));
-//	        for (int i = 0; i < items.size(); i++) {              
-//	            // store each object in JSONObject  
-//	            JSONObject explrObject = items.getJSONObject(i);  
-//	        }      
+	        for (int i = 0; i < items.size(); i++) {              
+	            JSONObject explrObject = (JSONObject) items.get(i);  
+	            String link = (String) explrObject.get("link");
+	            System.out.println("link : "+link);
+	        }      
 	        
 	        
         } catch (Exception e) {
