@@ -1,5 +1,8 @@
 package com.cos.hotspot.controller;
 
+import java.io.IOException;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +20,7 @@ public class SearchController {
 	
 	// 유저 혹은 어드민이 접근 가능
 	@PostMapping("/search/{url}")
-	public String search(@PathVariable("url") String url) {
+	public String search(@PathVariable("url") String url) throws IOException {
 		//System.out.println("principal : "+principal.getUsername());
 			
 		return naverService.main(url);

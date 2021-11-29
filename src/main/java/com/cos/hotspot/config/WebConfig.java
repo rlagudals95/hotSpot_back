@@ -10,8 +10,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.cos.jwtex01.config.auth.LoginUserArgumentResolver;
-
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
