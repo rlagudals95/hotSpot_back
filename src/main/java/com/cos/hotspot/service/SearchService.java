@@ -45,7 +45,9 @@ public class SearchService {
 	        for (int i = 0; i < items.size(); i++) {              
 	            JSONObject explrObject = (JSONObject) items.get(i);  
 	            String link = (String) explrObject.get("link");
-	            System.out.println("link : "+link);
+	            System.out.println("link : "+ link);
+	            
+	            Utils.getMeta(link);
 	        }      
 	        
 	        
@@ -56,20 +58,5 @@ public class SearchService {
         return result;
 	};
 	
-	public static String getMeta(String url) throws IOException{
-		
-		Map<String, Object> returnMap = new HashMap<String,Object>();
-		Document document = Jsoup.connect(url).get();
-
-	
-		System.out.println("크롤링 : "+ document);
-		
-		String test = "";
-		
-		
-		return "";
-	}
-	
-
 	
 }
