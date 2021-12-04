@@ -37,15 +37,15 @@ public class SearchService {
 	        result = response;
 	        
 	        org.json.simple.JSONObject obj = Utils.jsonParser(response);
-	        
+	        //System.out.println("result: "+result);
 	        JSONArray items = (JSONArray) obj.get("items");
 	        
 	        JSONObject jsonObj = (JSONObject) items.get(0);
-	        System.out.println("items:" +items.getClass());
+	        //System.out.println("items:" +items.getClass());
 	        for (int i = 0; i < items.size(); i++) {              
 	            JSONObject explrObject = (JSONObject) items.get(i);  
 	            String link = (String) explrObject.get("link");
-	            System.out.println("link : "+ link);
+	            //System.out.println("link : "+ link);
 	            
 	            Utils.getMeta(link);
 	        }      
@@ -54,7 +54,7 @@ public class SearchService {
         } catch (Exception e) {
         	e.printStackTrace();
         }
-        System.out.println("검색결과"+result);
+        //System.out.println("검색결과"+result);
         return result;
 	};
 	
