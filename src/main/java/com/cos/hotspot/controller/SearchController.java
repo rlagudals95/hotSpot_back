@@ -20,7 +20,7 @@ public class SearchController {
 	
 	// 유저 혹은 어드민이 접근 가능
 	@PostMapping("/search/{url}")
-	public String search(@PathVariable("url") String url) throws IOException {
+	public Map<String, Object> search(@PathVariable("url") String url) throws IOException {
 		//System.out.println("principal : "+principal.getUsername());
 			
 		return naverService.main(url);

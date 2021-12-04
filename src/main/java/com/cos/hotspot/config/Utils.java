@@ -49,7 +49,7 @@ public class Utils {
 		
     }
  
-	public static void getMeta(String url) throws IOException{
+	public static String getMeta(String url) throws IOException{
 		// 네이버 블로그 url로 document가져오기
 		Document doc = Jsoup.connect(url).get();
 	
@@ -59,7 +59,7 @@ public class Utils {
 		//진짜 블로그 주소 document 가져오기
 		String url2 = "http://blog.naver.com"+ src;
 		Document doc2 = Jsoup.connect(url2).get();
-		System.out.println("주소 확인용 : " +url2);
+		//System.out.println("주소 확인용 : " +url2);
 		//System.out.println("doc2 : "+doc2);
 		// 블로그에서 원하는 블로그 페이지 가져오기
 		String[] blog_logNo = src.split("&");
@@ -72,7 +72,8 @@ public class Utils {
 		Elements blog_element = doc2.select(real_blog_addr);
 		// 블로그 썸네일 가져오기
 		String og_image = doc2.select("meta[property=og:image]").get(0).attr("content");
-		System.out.println("og_image : " + og_image);
+		//System.out.println("og_image : " + og_image);
+		return og_image;
 	}
 
 	
